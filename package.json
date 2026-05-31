@@ -2,17 +2,30 @@
   "name": "playwright-e2e-tests",
   "version": "1.0.0",
   "description": "Playwright E2E Tests with AI capabilities incl MCP",
+  "type": "module",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "debug:cli": "PWDEBUG=1 npx playwright test tests/demo/debug.elementhandling.spec.ts",
+    "debug:ui": "npx playwright test tests/demo/debug.elementhandling.spec.ts --ui --headed",
+    "debug:trace": "npx playwright test tests/demo/debug.elementhandling.spec.ts --trace on",
+    "debug": "npx playwright test tests/demo/debug.elementhandling.spec.ts",
+    "make-apt": "npx playwright test tests/functional/make.appointment.spec.ts",
+    "login": "npx playwright test tests/functional/login.spec.ts",
+    "mcp": "npx playwright test tests/mcp/mcp.spec.ts",
+    "elmt-hnd": "npx playwright test tests/demo/elementhandling.spec.ts",
+    "pw-basic-cap": "npx playwright test tests/demo/debug.elementhandling.spec.ts headed"
+  },
   "keywords": [
     "playwright",
-    "playwright-e2e-tests",
-    "playwright-mcp"
+    "playwright-e2e-tests"
   ],
   "author": "Swapnil",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "allure-playwright": "^3.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
 }
